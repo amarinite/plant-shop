@@ -1,14 +1,25 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import hero from "./hero.jpg";
+
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./ui/AppLayout";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import PageNotFound from "./pages/PageNotFound";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
+});
 
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
@@ -17,20 +28,9 @@ function App() {
             <Route path="catalog" element={<Catalog />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
-          {/* <header>
-            <span>LOGO</span>
-            <input type="text" />
-            <span></span>
-            <span></span>
-          </header>
-          <main>
-            <div></div>
-          </main>
-          <footer></footer>
-          <img src={hero} alt="hero" /> */}
         </Routes>
       </BrowserRouter>
-    </>
+    </QueryClientProvider>
   );
 }
 

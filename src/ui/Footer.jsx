@@ -1,9 +1,11 @@
+import { styled } from "styled-components";
+
+const StyledFooter = styled.footer`
+  background-color: orange;
+`;
+
 function Footer() {
-    return (
-        <div>
-            Footer
-        </div>
-    )
+  return <StyledFooter>Footer</StyledFooter>;
 }
 
-export default Footer
+export default Footer;

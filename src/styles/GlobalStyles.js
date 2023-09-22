@@ -5,8 +5,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 :root {
   /* Greenish */
-  --color-primary-50: #f0f5eb;
-  --color-primary-100: #e0ecd7;
+  --color-primary-50: #fbfcf9;
+  --color-primary-100: #f0f5eb;
   --color-primary-200: #d1e2c3;
   --color-primary-300: #c1d8af;
   --color-primary-400: #b2cf9c;
@@ -15,18 +15,19 @@ const GlobalStyles = createGlobalStyle`
   --color-primary-700: #84b160;
   --color-primary-800: #74a84c;
   --color-primary-900: #659e38;
+  --color-primary-900: #659e38;
 
     /* Yellowish */
-  --color-primary-50: #f4f5ec;
-  --color-primary-100: #e8ebd8;
-  --color-primary-200: #dde2c5;
-  --color-primary-300: #d1d8b1;
-  --color-primary-400: #c6ce9e;
-  --color-primary-500: #bac48b;
-  --color-primary-600: #afba77;
-  --color-primary-700: #a3b164;
-  --color-primary-800: #98a750;
-  --color-primary-900: #8c9d3d;
+  --color-secondary-50: #f4f5ec;
+  --color-secondary-100: #e8ebd8;
+  --color-secondary-200: #dde2c5;
+  --color-secondary-300: #d1d8b1;
+  --color-secondary-400: #c6ce9e;
+  --color-secondary-500: #bac48b;
+  --color-secondary-600: #afba77;
+  --color-secondary-700: #a3b164;
+  --color-secondary-800: #98a750;
+  --color-secondary-900: #8c9d3d;
 
   /* Grey */
   --color-grey-0: #fff;

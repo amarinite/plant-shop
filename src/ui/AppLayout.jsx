@@ -4,20 +4,16 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const StyledAppLayout = styled.div`
-  background-color: orangered;
-`;
-
-const Main = styled.main`
-  background-color: yellowgreen;
+  background-color: var(--color-primary-50);
 `;
 
 function AppLayout() {
   return (
     <StyledAppLayout>
       <Header />
-      <Main>
-        <Outlet />
-      </Main>
+
+      <Outlet />
+
       <Footer />
     </StyledAppLayout>
   );
