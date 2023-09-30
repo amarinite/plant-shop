@@ -7,6 +7,7 @@ const variations = {
 
     &:hover {
       background-color: var(--color-primary-700);
+      box-shadow: var(--shadow-lg);
     }
   `,
   secondary: css`
@@ -15,9 +16,10 @@ const variations = {
     border: 1px solid var(--color-primary-900);
 
     &:hover {
-      border: none;
+      box-shadow: var(--shadow-lg);
+      /* border: none;
       background-color: var(--color-secondary-700);
-      color: var(--color-primary-50);
+      color: var(--color-primary-50); */
     }
   `,
 };
@@ -26,7 +28,7 @@ const Button = styled.button`
   border: none;
   border-radius: var(--border-radius-sm);
   font-size: 1.4rem;
-  padding: 1.2rem 1.6rem;
+  padding: 1rem 1.2rem;
   font-weight: 500;
   width: 100%;
 

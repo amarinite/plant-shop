@@ -11,6 +11,28 @@ const StyledPlantsList = styled.section`
   gap: 2rem;
 `;
 
+const StyledSort = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  select {
+    appearance: none;
+    /* safari */
+    -webkit-appearance: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 6rem 0.5rem 1.5rem;
+    background-color: white;
+    border: 1px solid var(--color-grey-200);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  div {
+    margin-left: auto;
+  }
+`;
+
 function PlantsList() {
   const {
     isLoading,
@@ -26,7 +48,7 @@ function PlantsList() {
   return (
     <StyledPlantsList>
       <h2>Plant List</h2>
-      <div>
+      <StyledSort>
         <p>Sort by...</p>
         <select>
           <option value="nameAscending">Name (ascending)</option>
@@ -34,9 +56,11 @@ function PlantsList() {
           <option value="priceHigher">Price (higher first)</option>
           <option value="priceLower">Price (lower first)</option>
         </select>
-        <HiOutlineSquares2X2 />
-        <HiOutlineListBullet />
-      </div>
+        <div>
+          <HiOutlineSquares2X2 />
+          <HiOutlineListBullet />
+        </div>
+      </StyledSort>
       {plants.map((plant) => (
         <PlantItem plant={plant} key={plant.id} />
       ))}

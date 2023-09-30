@@ -10,6 +10,7 @@ const StyledPlantItem = styled.li`
   background-color: var(--color-primary-50);
   padding: 2rem 3rem;
   border: 1px solid var(--color-grey-100);
+  box-shadow: var(--shadow-md);
 `;
 
 const Img = styled.img`
@@ -18,10 +19,15 @@ const Img = styled.img`
 
 const PlantInfo = styled.div`
   flex-grow: 1;
+
+  p {
+    margin-top: 1.2rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const BuyBlock = styled.div`
-  width: 22rem;
+  width: 25rem;
   text-align: right;
   display: flex;
   flex-direction: column;
