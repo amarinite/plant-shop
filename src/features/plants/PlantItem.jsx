@@ -15,6 +15,7 @@ const StyledPlantItem = styled.li`
 
 const Img = styled.img`
   width: 20rem;
+  z-index: 0;
 `;
 
 const PlantInfo = styled.div`

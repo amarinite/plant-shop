@@ -10,6 +10,7 @@ const StyledAppLayout = styled.div`
 
 const Container = styled.div`
   margin: 0 5rem;
+  min-height: 100vh;
 `;
 
 function AppLayout() {

@@ -3,6 +3,7 @@ import PlantItem from "./PlantItem";
 import { getPlants } from "../../services/apiPlants";
 import { useQuery } from "@tanstack/react-query";
 import { HiOutlineSquares2X2, HiOutlineListBullet } from "react-icons/hi2";
+import Spinner from "../../ui/Spinner";
 
 const StyledPlantsList = styled.section`
   background-color: var(--color-primary-50);
@@ -43,7 +44,7 @@ function PlantsList() {
     queryFn: getPlants,
   });
 
-  if (isLoading) return;
+  if (isLoading) return <Spinner />;
 
   return (
     <StyledPlantsList>
