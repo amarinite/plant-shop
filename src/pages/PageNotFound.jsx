@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../ui/Button";
 
@@ -17,7 +18,9 @@ function PageNotFound() {
     <NotFound>
       <h2>Page Not Found</h2>
       <p>Unfortunately, the page you are looking for does not exist.</p>
-      <Button>Go back to shopping</Button>
+      <Button>
+        <NavLink to="/"> Go back to shopping</NavLink>
+      </Button>
     </NotFound>
   );
 }

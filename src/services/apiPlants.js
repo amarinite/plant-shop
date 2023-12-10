@@ -10,3 +10,14 @@ export async function getPlants() {
 
   return data;
 }
+
+export async function getPlant(id) {
+  const { data, error } = await supabase.from("plants").select().eq("id", id);
+
+  if (error) {
+    console.log(error);
+    throw new Error("Plant could not be loaded");
+  }
+
+  return data;
+}

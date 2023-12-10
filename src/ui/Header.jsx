@@ -24,9 +24,10 @@ const Logo = styled.p`
 
 const Searchbar = styled.input`
   background-color: var(--color-primary-100);
-  padding: 0.8rem 10rem 0.8rem 1rem;
+  padding: 0.8rem 12rem 0.8rem 2rem;
   border: none;
   border-radius: 15px;
+  color: var(--color-grey-600);
 `;
 
 function Header() {
