@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import Button from "../../ui/Button";
+import { Link } from "react-router-dom";
 
 // plants info from https://plnts.com
 
@@ -44,6 +45,7 @@ const Price = styled.p`
 
 function PlantItem({ plant }) {
   const {
+    id,
     img,
     name,
     family,
@@ -66,7 +68,9 @@ function PlantItem({ plant }) {
       </PlantInfo>
       <BuyBlock>
         <Price>${price}</Price>
-        <Button variation="secondary">See details</Button>
+        <Link to={`${id}`}>
+          <Button variation="secondary">See details</Button>
+        </Link>
         <Button>Add to cart</Button>
       </BuyBlock>
     </StyledPlantItem>

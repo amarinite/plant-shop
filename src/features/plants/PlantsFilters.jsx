@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import Button from "../../ui/Button";
 
 const StyledFilters = styled.aside`
   font-size: 1.5rem;
@@ -47,11 +48,11 @@ function PlantsFilters() {
         <legend>Family</legend>
         <StyledCheckbox>
           <input type="checkbox" id="calathea" name="family" value="calathea" />
-          <label for="calathea">Calathea</label>
+          <label htmlFor="calathea">Calathea</label>
         </StyledCheckbox>
         <StyledCheckbox>
           <input type="checkbox" id="ficus" name="family" value="ficus" />
-          <label for="ficus">Ficus</label>
+          <label htmlFor="ficus">Ficus</label>
         </StyledCheckbox>
         <StyledCheckbox>
           <input
@@ -60,32 +61,33 @@ function PlantsFilters() {
             name="family"
             value="philodendron"
           />
-          <label for="philodendron">Philodendron</label>
+          <label htmlFor="philodendron">Philodendron</label>
         </StyledCheckbox>
         <StyledCheckbox>
           <input type="checkbox" id="monstera" name="family" value="monstera" />
-          <label for="monstera">Monstera</label>
+          <label htmlFor="monstera">Monstera</label>
         </StyledCheckbox>
       </fieldset>
       <fieldset>
         <legend>Size</legend>
         <StyledCheckbox>
           <input type="checkbox" id="m-size" name="size" value="m-size" />
-          <label for="m-size">M</label>
+          <label htmlFor="m-size">M</label>
         </StyledCheckbox>
         <StyledCheckbox>
           <input type="checkbox" id="l-size" name="size" value="l-size" />
-          <label for="l-size">L</label>
+          <label htmlFor="l-size">L</label>
         </StyledCheckbox>
         <StyledCheckbox>
           <input type="checkbox" id="xl-size" name="size" value="xl-size" />
-          <label for="xl-size">XL</label>
+          <label htmlFor="xl-size">XL</label>
         </StyledCheckbox>
         <StyledCheckbox>
           <input type="checkbox" id="xxl-size" name="size" value="xxl-size" />
-          <label for="xxl-size">XXL</label>
+          <label htmlFor="xxl-size">XXL</label>
         </StyledCheckbox>
       </fieldset>
+      <Button variation="secondary">Apply filters</Button>
     </StyledFilters>
   );
 }

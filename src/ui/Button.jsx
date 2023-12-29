@@ -7,7 +7,7 @@ const variations = {
 
     &:hover {
       background-color: var(--color-primary-700);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-md);
     }
   `,
   secondary: css`
@@ -16,7 +16,7 @@ const variations = {
     border: 1px solid var(--color-primary-900);
 
     &:hover {
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-sm);
       /* border: none;
       background-color: var(--color-secondary-700);
       color: var(--color-primary-50); */

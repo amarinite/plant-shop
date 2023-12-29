@@ -6,7 +6,7 @@ const Main = styled.main`
   display: grid;
   grid-template-columns: 24rem 1fr;
   gap: 4rem;
-  margin: 3rem 7rem 3rem 5rem;
+  margin: 3rem 11rem;
   /* min-height: 100vh; */
 `;
 

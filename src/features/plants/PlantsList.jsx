@@ -2,8 +2,10 @@ import { styled } from "styled-components";
 import PlantItem from "./PlantItem";
 import { getPlants } from "../../services/apiPlants";
 import { useQuery } from "@tanstack/react-query";
-import { HiOutlineSquares2X2, HiOutlineListBullet } from "react-icons/hi2";
 import Spinner from "../../ui/Spinner";
+import Pagination from "../../ui/Pagination";
+import Sort from "../../ui/Sort";
+import { useState } from "react";
 
 const StyledPlantsList = styled.section`
   background-color: var(--color-primary-50);
@@ -12,29 +14,14 @@ const StyledPlantsList = styled.section`
   gap: 2rem;
 `;
 
-const StyledSort = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-
-  select {
-    appearance: none;
-    /* safari */
-    -webkit-appearance: none;
-    font-size: 1.2rem;
-    padding: 0.5rem 6rem 0.5rem 1.5rem;
-    background-color: white;
-    border: 1px solid var(--color-grey-200);
-    border-radius: 15px;
-    cursor: pointer;
-  }
-
-  div {
-    margin-left: auto;
-  }
-`;
-
 function PlantsList() {
+  const [sortBy, setSortBy] = useState("default");
+  const [sortedPlants, setSortedPlants] = useState([]);
+
+  const handleInputChange = (i) => {
+    setSortBy(i);
+  };
+
   const {
     isLoading,
     data: plants,
@@ -44,28 +31,38 @@ function PlantsList() {
     queryFn: getPlants,
   });
 
+  const sortPlants = () => {
+    switch (sortBy) {
+      case "nameAscending":
+        console.log("nameA");
+        return plants;
+      case "nameDescending":
+        console.log("nameD");
+        return plants;
+      case "priceHigher":
+        console.log("priceH");
+        return plants;
+      case "priceLower":
+        console.log("priceL");
+        return plants;
+      default:
+        return plants;
+    }
+  };
+
   if (isLoading) return <Spinner />;
 
   return (
-    <StyledPlantsList>
-      <h2>Plant List</h2>
-      <StyledSort>
-        <p>Sort by...</p>
-        <select>
-          <option value="nameAscending">Name (ascending)</option>
-          <option value="nameDescending">Name (descending)</option>
-          <option value="priceHigher">Price (higher first)</option>
-          <option value="priceLower">Price (lower first)</option>
-        </select>
-        <div>
-          <HiOutlineSquares2X2 />
-          <HiOutlineListBullet />
-        </div>
-      </StyledSort>
-      {plants.map((plant) => (
-        <PlantItem plant={plant} key={plant.id} />
-      ))}
-    </StyledPlantsList>
+    <>
+      <StyledPlantsList>
+        <h2>Plant List</h2>
+        <Sort onInputChange={handleInputChange} />
+        {sortedPlants.map((plant) => (
+          <PlantItem plant={plant} key={plant.id} />
+        ))}
+        <Pagination />
+      </StyledPlantsList>
+    </>
   );
 }
 
