@@ -32,26 +32,32 @@ const StyledCheckbox = styled.div`
   padding-left: 2rem;
 `;
 
-// price,
-// inStock,
-// size,
-// easy,
-// airPurifying,
-// petFriendly,
-// onSale,
-
 function PlantsFilters() {
+  const handleClick = (value) => {};
+
   return (
     <StyledFilters>
       <h3>Filters</h3>
       <fieldset>
         <legend>Family</legend>
         <StyledCheckbox>
-          <input type="checkbox" id="calathea" name="family" value="calathea" />
+          <input
+            type="checkbox"
+            id="calathea"
+            name="family"
+            value="calathea"
+            onClick={() => handleClick("calathea")}
+          />
           <label htmlFor="calathea">Calathea</label>
         </StyledCheckbox>
         <StyledCheckbox>
-          <input type="checkbox" id="ficus" name="family" value="ficus" />
+          <input
+            type="checkbox"
+            id="ficus"
+            name="family"
+            value="ficus"
+            onClick={() => handleClick("ficus")}
+          />
           <label htmlFor="ficus">Ficus</label>
         </StyledCheckbox>
         <StyledCheckbox>
@@ -60,31 +66,95 @@ function PlantsFilters() {
             id="philodendron"
             name="family"
             value="philodendron"
+            onClick={() => handleClick("philodendron")}
           />
           <label htmlFor="philodendron">Philodendron</label>
         </StyledCheckbox>
         <StyledCheckbox>
-          <input type="checkbox" id="monstera" name="family" value="monstera" />
+          <input
+            type="checkbox"
+            id="monstera"
+            name="family"
+            value="monstera"
+            onClick={() => handleClick("monstera")}
+          />
           <label htmlFor="monstera">Monstera</label>
         </StyledCheckbox>
       </fieldset>
       <fieldset>
         <legend>Size</legend>
         <StyledCheckbox>
-          <input type="checkbox" id="m-size" name="size" value="m-size" />
-          <label htmlFor="m-size">M</label>
+          <input
+            type="checkbox"
+            id="m"
+            name="size"
+            value="m"
+            onClick={() => handleClick("m")}
+          />
+          <label htmlFor="m">M</label>
         </StyledCheckbox>
         <StyledCheckbox>
-          <input type="checkbox" id="l-size" name="size" value="l-size" />
-          <label htmlFor="l-size">L</label>
+          <input
+            type="checkbox"
+            id="l"
+            name="size"
+            value="l"
+            onClick={() => handleClick("l")}
+          />
+          <label htmlFor="l">L</label>
         </StyledCheckbox>
         <StyledCheckbox>
-          <input type="checkbox" id="xl-size" name="size" value="xl-size" />
-          <label htmlFor="xl-size">XL</label>
+          <input
+            type="checkbox"
+            id="xl"
+            name="size"
+            value="xl"
+            onClick={() => handleClick("xl")}
+          />
+          <label htmlFor="xl">XL</label>
         </StyledCheckbox>
         <StyledCheckbox>
-          <input type="checkbox" id="xxl-size" name="size" value="xxl-size" />
-          <label htmlFor="xxl-size">XXL</label>
+          <input
+            type="checkbox"
+            id="xxl"
+            name="size"
+            value="xxl"
+            onClick={() => handleClick("xxl")}
+          />
+          <label htmlFor="xxl">XXL</label>
+        </StyledCheckbox>
+      </fieldset>
+      <fieldset>
+        <legend>Characteristics</legend>
+        <StyledCheckbox>
+          <input
+            type="checkbox"
+            id="airPurifying"
+            name="characteristics"
+            value="airPurifying"
+            onClick={() => handleClick("airPurifying")}
+          />
+          <label htmlFor="airPurifying">Air purifying</label>
+        </StyledCheckbox>
+        <StyledCheckbox>
+          <input
+            type="checkbox"
+            id="petFriendly"
+            name="characteristics"
+            value="petFriendly"
+            onClick={() => handleClick("petFriendly")}
+          />
+          <label htmlFor="petFriendly">Pet friendly</label>
+        </StyledCheckbox>
+        <StyledCheckbox>
+          <input
+            type="checkbox"
+            id="easy"
+            name="characteristics"
+            value="easy"
+            onClick={() => handleClick("easy")}
+          />
+          <label htmlFor="easy">Easy care</label>
         </StyledCheckbox>
       </fieldset>
       <Button variation="secondary">Apply filters</Button>
