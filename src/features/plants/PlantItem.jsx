@@ -44,20 +44,7 @@ const Price = styled.p`
 `;
 
 function PlantItem({ plant }) {
-  const {
-    id,
-    img,
-    name,
-    family,
-    description,
-    price,
-    inStock,
-    size,
-    easy,
-    airPurifying,
-    petFriendly,
-    onSale,
-  } = plant;
+  const { id, img, name, description, price } = plant;
 
   return (
     <StyledPlantItem>

@@ -67,6 +67,8 @@ function PlantsFilters() {
     for (const [group, value] of Object.entries(activeFilters)) {
       if (value.length > 0) {
         searchParams.set(group, value);
+      } else {
+        searchParams.delete(group);
       }
     }
     setSearchParams(searchParams.toString());
